@@ -15,6 +15,22 @@ body {
   line-height: 1.5;
   color: #222222;
 }
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+p {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+@media screen and (min-width: 743px) {
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
 .hosted {
   display: flex;
   align-items: center;
@@ -26,15 +42,7 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
-.hosted__heading {
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-.hosted__text {
-  font-size: 1.4rem;
-  font-weight: 450;
-  color: #6a6a6a;
-}
+
 /* media */
 
 .media {
@@ -52,4 +60,16 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
   color: #6a6a6a;
+}
+
+/* Link */
+.link {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: black;
+}
+@media screen and (min-width: 743px) {
+  .link {
+    font-size: 1.4rem;
+  }
 }
