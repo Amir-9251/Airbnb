@@ -35,3 +35,21 @@ body {
   font-weight: 450;
   color: #6a6a6a;
 }
+/* media */
+
+.media {
+  display: flex;
+  gap: 1rem;
+}
+.media__icon {
+  padding: 1rem;
+}
+.media__heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.media__text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #6a6a6a;
+}
