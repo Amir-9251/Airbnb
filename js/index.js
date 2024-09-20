@@ -1,65 +1,29 @@
-var categories = [];
-let average = "#74ae60";
-var options = {
-  series: [
-    {
-      data: [100, 90, 80, 80, 60, 50, 40, 20],
-    },
-  ],
-  click: function () {
-    let changeColor = this.series[0].data;
-    changeColor.forEach((element) => {
-      if (element > 90) {
-        this.colors.push("#a83e3e");
-        categories.push("EM01");
-      } else if (element <= 90 && element > 80) {
-        this.colors.push("#d84e4e");
-        categories.push("EM02");
-      } else if (element <= 80 && element > 20) {
-        this.colors.push("#ffc95e");
-        categories.push("EM04");
-      } else if (element <= 20) {
-        this.colors.push("#74ae60");
-        categories.push("EM05");
-      }
-    });
-  },
-  chart: {
-    height: 400,
-    type: "bar",
-    borderRadius: "10",
-    toolbar: {
-      show: false,
-    },
-    events: {},
-  },
-  colors: [],
-  plotOptions: {
-    bar: {
-      columnWidth: "40%",
-      distributed: true,
-      borderRadius: 5,
-    },
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  legend: {
-    show: false,
-  },
+let currentIndex = 0;
+let images = document.querySelectorAll(".slider-item");
+let totalSlides = images.length;
+let counter = document.getElementById("imageCounter");
+let prev = document.querySelector(".prev");
+let next = document.querySelector(".next");
 
-  xaxis: {
-    categories: categories,
-    labels: {
-      style: {
-        fontSize: "15px",
-        fontWeight: 500,
-        fontFamily: "Helvetica, Arial",
-      },
-    },
-  },
+const updateSlider = () => {
+  let screenWidth = window.innerWidth;
+  let visibleImages = screenWidth > 743 ? 5 : 1;
+
+  images.forEach(
+    (img, i) =>
+      (img.style.display =
+        i >= currentIndex && i < currentIndex + visibleImages
+          ? "block"
+          : "none")
+  );
+  console.log(currentIndex);
+  counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+  prev.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+  next.style.pointerEvents =
+    currentIndex + visibleImages >= totalSlides ? "none" : "auto";
 };
-options.click();
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
+prev.addEventListener("click", () => (currentIndex--, updateSlider()));
+next.addEventListener("click", () => (currentIndex++, updateSlider()));
+window.addEventListener("resize", updateSlider);
+updateSlider();
