@@ -1,29 +1,32 @@
-let currentIndex = 0;
-let images = document.querySelectorAll(".slider-item");
-let totalSlides = images.length;
-let counter = document.getElementById("imageCounter");
-let prev = document.querySelector(".prev");
-let next = document.querySelector(".next");
+let currentIndex = 1;
+let windowSize = window.innerWidth;
+let intervalId;
+document.getElementById("totalImages").innerText =
+  " / " + document.querySelectorAll(".slider-item").length;
+if (windowSize < 743) {
+  startSlider();
+}
 
-const updateSlider = () => {
-  let screenWidth = window.innerWidth;
-  let visibleImages = screenWidth > 743 ? 5 : 1;
+function startSlider() {
+  intervalId = setInterval(() => {
+    let slideImages = document.querySelectorAll(".slider-item");
+    slideImages.forEach((element, i) => {
+      element.classList.remove("active");
+      if (i === currentIndex) {
+        element.classList.add("active");
+      }
+    });
+    document.getElementById("counter").innerText = currentIndex + 1;
+    currentIndex = (currentIndex + 1) % slideImages.length;
+  }, 2000);
+}
 
-  images.forEach(
-    (img, i) =>
-      (img.style.display =
-        i >= currentIndex && i < currentIndex + visibleImages
-          ? "block"
-          : "none")
-  );
-  console.log(currentIndex);
-  counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
-  prev.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
-  next.style.pointerEvents =
-    currentIndex + visibleImages >= totalSlides ? "none" : "auto";
-};
-
-prev.addEventListener("click", () => (currentIndex--, updateSlider()));
-next.addEventListener("click", () => (currentIndex++, updateSlider()));
-window.addEventListener("resize", updateSlider);
-updateSlider();
+window.addEventListener("resize", () => {
+  windowSize = window.innerWidth;
+  if (windowSize < 743 && !intervalId) {
+    startSlider();
+  } else if (windowSize >= 743 && intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+});
