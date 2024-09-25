@@ -1,0 +1,49 @@
+@media screen and (min-width: 743px) {
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+/* container */
+@media screen and (min-width: 743px) {
+  .container {
+    max-width: 116rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+}
+/* Navbar */
+@media screen and (max-width: 1125px) {
+  .navbar__heading {
+    display: none;
+  }
+}
+@media screen and (max-width: 950px) {
+  .navbar-container .navbar-col-1 {
+    width: 0;
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 743px) {
+  .navbar {
+    display: none;
+  }
+}
+/* Link */
+@media screen and (min-width: 743px) {
+  .link {
+    font-size: 1.4rem;
+  }
+}
+/* Profile Card  */
+@media screen and (min-width: 743px) {
+  .profile__heading {
+    font-size: 2.7rem;
+  }
+  .profile__text {
+    font-size: 1.3rem;
+  }
+}
+/* image Gallery  */

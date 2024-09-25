@@ -18,7 +18,7 @@ function startSlider() {
     });
     document.getElementById("counter").innerText = currentIndex + 1;
     currentIndex = (currentIndex + 1) % slideImages.length;
-  }, 2000);
+  }, 3000);
 }
 
 window.addEventListener("resize", () => {

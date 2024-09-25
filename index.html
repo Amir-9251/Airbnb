@@ -4,21 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AirBnB</title>
+
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <link
       rel="stylesheet"
       href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
     />
   </head>
   <body>
-    <div class="navbar-mid">
-      <ul class="list">
-        <li class="list__item"><a href="">Anywhere</a></li>
-        <li class="list__item"><a href="">Any week</a></li>
-        <li class="list__item"><a href="">Add guests</a></li>
-      </ul>
-    </div>
-    <!-- <script src="js/index.js" ></script> -->
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <div class="navbar-col-1">
+          <div>
+            <a class="navbar-header" href="/">
+              <img class="navbar__brand" src="images/airbnb.svg" alt="" />
+              <h1 class="navbar__heading">airbnb</h1>
+            </a>
+          </div>
+          <div class="navbar-mid">
+            <ul class="list">
+              <li class="list__item">Anywhere</li>
+              <li class="list__item">Any week</li>
+              <li class="list__item">Add guests</li>
+              <li class="list__item">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.svg#search_icon"></use>
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-last">
+          <ul class="list">
+            <li class="list__item"><a href="#">Airbnb your home</a></li>
+            <li class="list__item">
+              <a href="#">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.svg#internet"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="list__item">
+              <a href="#">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.svg#menu"></use>
+                </svg>
+                <img class="profile__icon" src="images/profile.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="nav-row-2-container container">
+      <div class="nav-row-2">
+        <h2 class="nav-heading">Go VIP with Kevin Hart</h2>
+        <ul class="list">
+          <li class="list__item">
+            <svg class="icon">
+              <use xlink:href="images/sprite.svg#lessthan"></use>
+            </svg>
+            <a href="#">Home</a>
+          </li>
+          <li class="list__item">
+            <svg class="icon">
+              <use xlink:href="images/sprite.svg#share"></use>
+            </svg>
+            <p>Share</p>
+          </li>
+          <li class="list__item">
+            <svg class="icon">
+              <use xlink:href="images/sprite.svg#love"></use>
+            </svg>
+            <p>Save</p>
+          </li>
+        </ul>
+      </div>
+      <div class="image-container">
+        <img src="images/1.webp" alt="Image 1" class="slider-item active" />
+        <img src="images/2.webp" alt="Image 2" class="slider-item" />
+        <img src="images/4.webp" alt="Image 3" class="slider-item" />
+        <img src="images/3.webp" alt="Image 4" class="slider-item" />
+        <img src="images/5.webp" alt="Image 5" class="slider-item" />
+
+        <div class="counter" id="imageCounter">
+          <span id="counter">1</span> <span id="totalImages"></span>
+        </div>
+        <div class="toggle__btn">
+          <i class="fa-regular fa-bars fa-xl toggle__menu"></i>
+          <p class="toggle__text">Show all photos</p>
+        </div>
+      </div>
+    </section>
+    <script src="js/index.js"></script>
   </body>
 </html>
 <a href=""></a>
