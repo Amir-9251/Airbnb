@@ -2,6 +2,12 @@
 :root {
   --color-primary: #ff385c;
 }
+::-webkit-scrollbar {
+  width: 70px;
+}
+::-webkit-scrollbar-thumb {
+  color: #ff385c;
+}
 *,
 ::after,
 ::before {
@@ -88,6 +94,10 @@ p {
 .navbar-mid:hover {
   box-shadow: 0 0 5px 1.5px rgb(211, 211, 211, 0.9);
 }
+.navbar-mid .list {
+  display: flex;
+  align-items: center;
+}
 .navbar-mid .list__item {
   border-left: 1px solid lightgray;
   font-size: 1.5rem;
@@ -111,14 +121,13 @@ p {
   align-items: center;
   background: var(--color-primary);
   border-radius: 50%;
-  padding: 0.8rem;
-  margin: 0.5rem;
+  padding: 1rem;
+  margin: 0.3rem 0.5rem;
 }
 
 .navbar-mid .list__item .icon {
   width: 13px;
   height: 13px;
-  stroke-width: 50px;
   color: #fff;
 }
 /* navbar Last */
@@ -133,7 +142,10 @@ p {
   width: 30px;
   height: 30px;
 }
-
+.navbar-last .list {
+  display: flex;
+  align-items: center;
+}
 .navbar-last .list__item:nth-child(1) a {
   margin: 1rem;
   font-size: 1.5rem;
@@ -181,6 +193,8 @@ p {
   display: none;
 }
 .nav-row-2 .list {
+  display: flex;
+  align-items: center;
   gap: 1rem;
   width: 100%;
 }
@@ -202,12 +216,17 @@ p {
   font-weight: 500;
   text-decoration: underline;
 }
+.nav-row-2 .list__item a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
 .nav-row-2 .list__item p {
   display: none;
 }
 .nav-row-2 .icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
 }
 @media screen and (min-width: 743px) {
   .nav-row-2 {
@@ -234,18 +253,23 @@ p {
   .nav-row-2 .list__item:first-child {
     display: none;
   }
+  .nav-row-2 .icon {
+    width: 18px;
+    height: 18px;
+  }
 }
 @media screen and (max-width: 743px) {
   .nav-row-2-container.container {
     max-width: 100%;
     padding: 0;
   }
+  .nav-row-2 .list {
+    padding: 1.5rem 0.5rem;
+  }
 }
 
 /* List styling */
 .list {
-  display: flex;
-  align-items: center;
   list-style: none;
 }
 /* TODO:  Hosted */
@@ -269,6 +293,7 @@ p {
 }
 .media {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 .media__icon {
@@ -289,6 +314,10 @@ p {
   font-size: 1.6rem;
   font-weight: 500;
   color: black;
+  text-decoration: underline;
+}
+.link .icon {
+  transform: translate(-5px, 7px);
 }
 
 /*TODO: Profile Card */
@@ -296,12 +325,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: inherit;
   box-shadow: 0 0 20px 3px lightgray;
-  text-decoration: none;
   max-width: 38rem;
   border-radius: 2.2rem;
-  padding: 2.5rem 0;
+  padding: 2.8rem 0;
+  margin: 2rem 0 3rem;
 }
 .profile__image {
   width: 10rem;
@@ -401,4 +429,56 @@ p {
 .icon {
   width: 25px;
   height: 25px;
+  display: flex;
+  align-items: center;
+}
+/* Content Block */
+
+.content__main-heading {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+.content__text {
+  font-size: 1.7rem;
+  font-weight: 400;
+  word-spacing: 0.2px;
+  line-height: 1.4;
+  margin-bottom: 1.8rem;
+  color: black;
+}
+.content__text:first-child {
+  margin-bottom: 0;
+}
+.content__sub-heading {
+  font-size: 1.8rem;
+  font-weight: 400;
+  word-spacing: 0.2px;
+  margin: 2rem 0;
+}
+@media screen and (min-width: 743px) {
+  .content-block .link {
+    display: none;
+  }
+}
+/* Profile Block */
+.profile-block .media__text {
+  opacity: 1;
+  font-size: 1.8rem;
+  color: #000;
+}
+.profile-block .media__icon {
+  padding: 0;
+}
+
+.profile-block .media {
+  margin-bottom: 1.5rem;
+}
+.profile-block__heading {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.profile-block__text {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0;
 }
