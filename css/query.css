@@ -49,14 +49,27 @@ p {
   width: 25px;
   height: 25px;
 }
-.neighborhood-block {
+/* =============================== */
+/*          Footer Links           */
+/* =============================== */
+.footer-links {
+  display: flex;
+  gap: 0.8rem;
   padding: 2.5rem 0;
 }
-.neighborhood__heading {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.footer-links .link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
-.neighborhood-text {
-  font-size: 1.8rem;
+.footer-links .icons .icon {
+  width: 15px;
+  height: 15px;
+  transform: translate(4px, 1px);
 }
+.footer-links .link:hover {
+  text-decoration: underline;
+}
+/* =============================== */
+/*       Footer Links End          */
+/* =============================== */
