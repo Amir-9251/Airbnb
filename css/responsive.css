@@ -9,9 +9,8 @@
 /* container */
 @media screen and (min-width: 743px) {
   .container {
-    max-width: 116rem;
-    margin: 0 auto;
-    padding: 0 3rem;
+    max-width: 119rem;
+    padding: 0 3.5rem;
   }
 }
 /* Navbar */
