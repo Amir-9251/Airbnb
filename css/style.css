@@ -491,7 +491,7 @@ p {
 }
 @media screen and (max-width: 1200px) {
   .image-container {
-    grid-template-rows: 250px;
+    grid-template-rows: 300px;
   }
 }
 /* Content Block */
