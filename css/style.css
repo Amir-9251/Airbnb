@@ -433,7 +433,7 @@ p {
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 300;
   padding: 0.2rem 1rem;
   border-radius: 20px;
 }
@@ -491,7 +491,7 @@ p {
 }
 @media screen and (max-width: 1200px) {
   .image-container {
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: 250px;
   }
 }
 /* Content Block */
